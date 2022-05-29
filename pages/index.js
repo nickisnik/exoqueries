@@ -21,7 +21,7 @@ export default function Home() {
     setShowEarth((prev) => !prev)
   }
 
-  const randomPlanetNum = Math.floor(Math.random() * 21)
+  const randomPlanetNum = Math.floor(Math.random() * 21);
   const queryArchive = () => {
     fetch(`https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,st_age,pl_rade,pl_orbper,sy_dist,pl_masse,ra,dec+from+ps+where+upper(soltype)+like+%27%CONF%%27+and+pl_masse+between+0.5+and+3.0&format=json`)
       .then((res) => res.json())
@@ -38,8 +38,8 @@ export default function Home() {
     }
     console.log(planetData)
     const earthSize =  1 / (planetData.pl_rade);
-    const earthSizePx = earthSize*300;
-    document.documentElement.style.setProperty('--earth-size', `${earthSizePx}px`)
+    const earthSizePx = earthSize*35;
+    document.documentElement.style.setProperty('--earth-size', `${earthSizePx}vh`)
   }, [planetData])
   
   

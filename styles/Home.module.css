@@ -1,6 +1,10 @@
 
 .home {
-  padding: 2rem;
+  padding: 3rem;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .w {
@@ -8,8 +12,8 @@
 }
 
 #exoplanet_img_container {
-  width: 350px;
-  height: 350px;
+  width: 35vh;
+  height: 35vh;
 }
 
 #exoplanet_container {
@@ -38,7 +42,7 @@
 }
 
 #exoplanet_main {
-  margin-top: 10vh;
+  margin: auto;
   padding: 0 5rem;
   display: flex;
  /*  border: 1px solid grey; */
