@@ -38,7 +38,7 @@ const Details = ({planetData}) => {
 
   return (
     <>
-    <span className={styles.exoplanet_detail}>Mass:<span className={styles.unit}> {planetData.pl_masse || '*'}x</span> Earth's mass</span>
+    <span className={styles.exoplanet_detail}>Mass:<span className={styles.unit}> {planetData.pl_masse || `*`}x</span> Earth&apos;s mass</span>
     {/* <VerticalChart /> */}
     <span className={styles.exoplanet_detail}>Orbital period: <span className={styles.unit}>{Math.floor(planetData.pl_orbper * 100)/100 || '*'}</span> days</span>
     <span className={styles.exoplanet_detail}>Radius: <span className={styles.unit}>{planetData.pl_rade || 'Unknown'}{planetData.pl_rade && `x`}</span> {planetData.pl_rade && `Earth's radius`}</span>
