@@ -23,7 +23,7 @@ export default function Home() {
 
   const randomPlanetNum = Math.floor(Math.random() * 21);
   const queryArchive = () => {
-    fetch(`https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,st_age,pl_rade,pl_orbper,sy_dist,pl_masse,ra,dec+from+ps+where+upper(soltype)+like+%27%CONF%%27+and+pl_masse+between+0.5+and+3.0&format=json`)
+    fetch(`https://nicks-proxy.herokuapp.com/exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,st_age,pl_rade,pl_orbper,sy_dist,pl_masse,ra,dec+from+ps+where+upper(soltype)+like+%27%CONF%%27+and+pl_masse+between+0.5+and+3.0&format=json`)
       .then((res) => res.json())
       .then((json) => {
         setPlanetData(json[randomPlanetNum])
@@ -64,7 +64,7 @@ export default function Home() {
           <span className={styles.exoplanet_distance}>Distance: {planetData.sy_dist || '*'} parsecs</span>
         </section>
         
-        <section id={styles.exoplanet_details_container} className={showEarth && styles.details_nobg}>
+        <section id={styles.exoplanet_details_container} className={showEarth ? styles.details_nobg : undefined}>
           {!showEarth && <Details planetData={planetData} />}
           {showEarth && <div id={styles.earth_container}><img src="./earth.png" alt="" className={styles.planet}/></div>}
         </section>
