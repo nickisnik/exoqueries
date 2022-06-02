@@ -24,12 +24,13 @@
 
 #exoplanet_details_container {
   padding: 2rem 5rem;
+  border-radius: 25px;
   display: flex;
   gap: 1.5rem;
   margin: auto 0 auto 12vw;
   flex-direction: column;
-  border: 1px solid rgb(60, 60, 60);
-  background-color: rgb(18, 18, 18);
+  border: 2px solid rgb(82, 82, 82);
+  background-color: none;
 }
 
 .details_nobg {
@@ -78,21 +79,23 @@
   box-sizing: border-box;
   padding: 1px;
   cursor: pointer;
+  transition-duration: 200ms;
 }
 
 .planet:hover {
   outline: 2px solid rgb(163, 162, 162);
+  box-shadow: 0px 0px 70px -0px rgb(0, 153, 255);
 }
 
 .unit {
-  color: rgb(0, 149, 255);
+  color: rgb(0, 153, 255);
 }
 
 #showEarthBtn {
   cursor: pointer;
   background: none;
   opacity: 0.6;
-  color: white;
+  color: orange;
   font-family: 'Inter';
   font-weight: 400;
   font-size: 1.5rem;
@@ -120,6 +123,8 @@
   height: var(--earth-size);
   width: var(--earth-size);
   margin: auto 0;
+  padding-top: 1rem;
+  box-sizing: content-box;
   opacity: 0;
   animation: appear 200ms linear forwards;
 }
@@ -160,10 +165,12 @@
   margin: auto 0;
   font-size: 1.5rem;
   font-weight: 400;
-  color: white;
+  color: orange;
   font-family: 'Inter';
 }
 
 .back_arrow {
   height: 2rem;
+  color: orange;
+  width: max-content;
 }
